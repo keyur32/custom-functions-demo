@@ -3,8 +3,8 @@
 function TRANSLATE(text, langLocale) {
 	return new OfficeExtension.Promise(function(resolve) {
 			var xhr = new XMLHttpRequest();
-			var url = 'https://dev.office.com'
-			
+			var url =  encodeURIComponent(`https://excelcf-demo-api.azurewebsites.net/api/translate?code=F69Va5ojUPvfnat9udiM8OpEcScy/oK3bV8/wBYW8OXlypR3nyV/AA==&name=${text}&langeLocale=${langLocale}`);
+
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState == XMLHttpRequest.DONE) {
 					resolve(xhr.responseText);
