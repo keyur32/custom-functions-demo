@@ -7,7 +7,7 @@ function TRANSLATE(text, langLocale) {
 			var localeStr = encodeURIComponent(langLocale);
 
 			var url = "https://excelcf-demo-api.azurewebsites.net/api/translate?code=F69Va5ojUPvfnat9udiM8OpEcScy/oK3bV8/wBYW8OXlypR3nyV/AA==&name=" + 
-				textStr + "&langeLocale=" + localeStr;
+				textStr + "&locale=" + localeStr;
 
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState == XMLHttpRequest.DONE) {
