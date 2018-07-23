@@ -3,7 +3,10 @@
 function TRANSLATE(text, langLocale) {
 	return new OfficeExtension.Promise(function(resolve) {
 			var xhr = new XMLHttpRequest();
-			var url =  encodeURIComponent(`https://excelcf-demo-api.azurewebsites.net/api/translate?code=F69Va5ojUPvfnat9udiM8OpEcScy/oK3bV8/wBYW8OXlypR3nyV/AA==&name=${text}&langeLocale=${langLocale}`);
+			var textStr = encodeURIComponent(text);
+			var localeStr = encodeURIComponent(langLocale);
+
+			var url = `https://excelcf-demo-api.azurewebsites.net/api/translate?code=F69Va5ojUPvfnat9udiM8OpEcScy/oK3bV8/wBYW8OXlypR3nyV/AA==&name=${textStr}&langeLocale=${localeStr}`;
 
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState == XMLHttpRequest.DONE) {
