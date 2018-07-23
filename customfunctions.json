@@ -103,7 +103,7 @@
 				}
 			],
 			"options": {
-				"sync": true
+				"sync": false
 			}
 		}
 	]
