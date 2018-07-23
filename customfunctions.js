@@ -36,18 +36,25 @@ function REGEXREPLACE(text, regex, replace_text)
 // Use the IEXT server to return the current stock prices for the existing ticker symbol
 function STOCKPRICE(ticker)
 {
-	return new OfficeExtension.Promise(function(setResult) {
-		fetch("https://api.iextrading.com/1.0/stock/" + ticker + "/price")
-		.then((response) => response.json())
-		.then((responseJson) => {
-			
-			console.log("response: " + {responseJson})
-			const stockprice = responseJson;
-			setResult(stockprice);
+   
+  return new OfficeExtension.Promise(
+	  function(resolve) {
+	
+		var xhr = new XMLHttpRequest();
+		var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+	
+		//add handler for xhr
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == XMLHttpRequest.DONE) {
+				
+				//return result back to Excel
+				resolve(xhr.responseText);
+			}
+		}
 
-		})
-		.catch((error) => {
-		return "Error: " + error;
-		});
-	});
+		//make request
+		xhr.open('GET', url, true);
+		xhr.send();
+});
+
 }
