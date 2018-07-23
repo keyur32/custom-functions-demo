@@ -9,12 +9,8 @@
 
 		<script src="customfunctions.js" type="text/javascript"></script>
 		<script type="text/javascript">
-			(function () {
-				"use strict";
-				Office.initialize = function (reason) {
-					return Excel.CustomFunctions.initialize();
-				};
-			})();
+
+			Office.Preview.startCustomFunctions();
 		</script>
 	</head>
 	<body>
