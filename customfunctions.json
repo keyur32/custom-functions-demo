@@ -79,7 +79,7 @@
 			"parameters": [
 				{
 					"name": "text",
-					"description": "text to localize",
+					"description": "search text",
 					"type": "string",
 					"dimensionality": "scalar"
 				},
@@ -106,7 +106,7 @@
 			"parameters": [
 				{
 					"name": "text",
-					"description": "text to localize",
+					"description": "search text",
 					"type": "string",
 					"dimensionality": "scalar"
 				},
