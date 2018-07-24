@@ -7,7 +7,7 @@
 			"helpUrl": "http://dev.office.com",
 			"result": {
 				"dimensionality": "scalar",
-				"type": "string"
+				"type": "number"
 			},
 			"parameters": [
 				{
