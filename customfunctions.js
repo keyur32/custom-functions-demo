@@ -37,11 +37,10 @@ function REGEXREPLACE(text, regex, replace_text)
 }
 
 
-// Use the IEXT server to return the current stock prices for the existing ticker symbol
+// Use the IEXT API to return the current stock prices for the existing ticker symbol
 function STOCKPRICE(ticker)
 {
-   
-  return new OfficeExtension.Promise(
+	return new OfficeExtension.Promise(
 	  function(resolve) {
 	
 		var xhr = new XMLHttpRequest();
@@ -59,6 +58,30 @@ function STOCKPRICE(ticker)
 		//make request
 		xhr.open('GET', url, true);
 		xhr.send();
-});
+	});
+}
 
+function STOCKPRICESTREAM(ticker, caller){
+	var result = 0;
+
+	//return every second
+    setInterval(function(){
+
+		var xhr = new XMLHttpRequest();
+		var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+	
+		//add handler for xhr
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == XMLHttpRequest.DONE) {
+				
+				//return result back to Excel
+				caller.setResult(xhr.responseText);
+			}
+		}
+
+    	//make request
+		xhr.open('GET', url, true);
+		xhr.send();    
+
+    }, 1000);
 }

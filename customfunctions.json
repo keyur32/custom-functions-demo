@@ -22,6 +22,27 @@
 			}
 		},
 		{
+			"name": "STOCKPRICESTREAM",
+			"description": "gets stock price",
+			"helpUrl": "http://dev.office.com",
+			"result": {
+				"dimensionality": "scalar",
+				"type": "string"
+			},
+			"parameters": [
+				{
+					"name": "ticker",
+					"description": "stock ticker",
+					"type": "string",
+					"dimensionality": "scalar"
+				}
+			],
+			"options": {
+				"sync": false,
+				"stream": true
+			}
+		},
+		{
 			"name": "TRANSLATE",
 			"description": "Translates the text to the desired locale",
 			"helpUrl": "http://dev.office.com",
