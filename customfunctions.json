@@ -35,6 +35,12 @@
 					"description": "stock ticker",
 					"type": "string",
 					"dimensionality": "scalar"
+				},
+				{
+					"name": "refresh interval",
+					"description": "refresh interval in seconds",
+					"type": "number",
+					"dimensionality": "scalar"
 				}
 			],
 			"options": {

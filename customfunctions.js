@@ -1,7 +1,7 @@
 ﻿
 // The following function is an example that returns a string:
 function TRANSLATE(text, langLocale) {
-	return new OfficeExtension.Promise(function(resolve) {
+	return new Promise(function(resolve) {
 			var xhr = new XMLHttpRequest();
 			var textStr = encodeURIComponent(text);
 			var localeStr = encodeURIComponent(langLocale);
@@ -40,7 +40,7 @@ function REGEXREPLACE(text, regex, replace_text)
 // Use the IEXT API to return the current stock prices for the existing ticker symbol
 function STOCKPRICE(ticker)
 {
-	return new OfficeExtension.Promise(
+	return new Promise(
 	  function(resolve) {
 	
 		var xhr = new XMLHttpRequest();
@@ -73,7 +73,7 @@ function STOCKPRICESTREAM(ticker, caller){
 		//add handler for xhr
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState == XMLHttpRequest.DONE) {
-				
+		
 				//return result back to Excel
 				caller.setResult(xhr.responseText);
 			}
