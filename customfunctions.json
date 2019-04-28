@@ -1,137 +1,47 @@
 ﻿{
-	"$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
-	"functions": [
-		{
-			"name": "STOCKPRICE",
-			"description": "gets stock price",
-			"helpUrl": "http://dev.office.com",
-			"result": {
-				"dimensionality": "scalar",
-				"type": "number"
-			},
-			"parameters": [
-				{
-					"name": "ticker",
-					"description": "stock ticker",
-					"type": "string",
-					"dimensionality": "scalar"
-				}
-			],
-			"options": {
-				"sync": false
-			}
-		},
-		{
-			"name": "STOCKPRICESTREAM",
-			"description": "gets stock price",
-			"helpUrl": "http://dev.office.com",
-			"result": {
-				"dimensionality": "scalar",
-				"type": "string"
-			},
-			"parameters": [
-				{
-					"name": "ticker",
-					"description": "stock ticker",
-					"type": "string",
-					"dimensionality": "scalar"
-				},
-				{
-					"name": "refresh interval",
-					"description": "refresh interval in seconds",
-					"type": "number",
-					"dimensionality": "scalar"
-				}
-			],
-			"options": {
-				"sync": false,
-				"stream": true
-			}
-		},
-		{
-			"name": "TRANSLATE",
-			"description": "Translates the text to the desired locale",
-			"helpUrl": "http://dev.office.com",
-			"result": {
-				"dimensionality": "scalar",
-				"type": "string"
-			},
-			"parameters": [
-				{
-					"name": "text",
-					"description": "text to localize",
-					"type": "string",
-					"dimensionality": "matrix"
-				},
-				{
-					"name": "locale",
-					"description": "locale code",
-					"type": "string",
-					"dimensionality": "scalar"
-				}
-			],
-			"options": {
-				"sync": false
-			}
-		},
-		{
-			"name": "REGEXMATCH",
-			"description": "matches regular expression",
-			"helpUrl": "http://dev.office.com",
-			"result": {
-				"dimensionality": "scalar",
-				"type": "boolean"
-			},
-			"parameters": [
-				{
-					"name": "text",
-					"description": "search text",
-					"type": "string",
-					"dimensionality": "scalar"
-				},
-				{
-					"name": "regex",
-					"description": "regular expression",
-					"type": "string",
-					"dimensionality": "scalar"
-				}
-			],
-			"options": {
-				"sync": true
-			}
-		},
-
-		{
-			"name": "REGEXREPLACE",
-			"description": "replaces regular expression",
-			"helpUrl": "http://dev.office.com",
-			"result": {
-				"dimensionality": "scalar",
-				"type": "string"
-			},
-			"parameters": [
-				{
-					"name": "text",
-					"description": "search text",
-					"type": "string",
-					"dimensionality": "scalar"
-				},
-				{
-					"name": "regex",
-					"description": "regular expression",
-					"type": "string",
-					"dimensionality": "scalar"
-				},
-				{
-					"name": "replace_text",
-					"description": "text to replace",
-					"type": "string",
-					"dimensionality": "scalar"
-				}
-			],
-			"options": {
-				"sync": true
-			}
-		}
-	]
+    "functions": [
+        {
+            "description": "Gets data from Oracle Enterprise Planning",
+            "helpUrl": "https://oracle.com",
+            "id": "HSGETVALUE",
+            "name": "HSGETVALUE",
+            "parameters": [
+                {
+                    "description": "connection",
+                    "name": "connection",
+                    "type": "string"
+                },
+                {
+                    "description": "period1",
+                    "name": "pov1",
+                    "optional": true,
+                    "type": "string"
+                },
+                {
+                    "description": "period2",
+                    "name": "pov2",
+                    "optional": true,
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "type": "number"
+            }
+        },
+        {
+            "description": "Returns Sentiment Score",
+            "id": "HAPPYSCORE",
+            "name": "CONTOSO.HAPPYSCORE",
+            "parameters": [
+                {
+                    "description": "string to score",
+                    "name": "text",
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "type": "number"
+            }
+        }
+    ]
 }

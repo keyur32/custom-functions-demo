@@ -31,7 +31,6 @@
 						<Metadata>
 							<SourceLocation resid="JSON-URL" />
 						</Metadata>
-						<Namespace resid="namespace" />
 					</ExtensionPoint>
 				</AllFormFactors>
 			</Host>
@@ -40,7 +39,7 @@
 			<bt:Urls>
 				<bt:Url id="JSON-URL" DefaultValue="https://keyur32.github.io/custom-functions-demo/customfunctions.json" />
 				<bt:Url id="JS-URL" DefaultValue="https://keyur32.github.io/custom-functions-demo/customfunctions.js" />
-				<bt:Url id="HTML-URL" DefaultValue="https://keyur32.github.io/custom-functions-demo/index.html" />
+				<bt:Url id="HTML-URL" DefaultValue="https://keyur32.github.io/custom-functions-demo/customfunctions.html" />
 			</bt:Urls>
 			<bt:ShortStrings>
 				<bt:String id="namespace" DefaultValue="DEMO" />
